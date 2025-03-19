@@ -19,6 +19,9 @@ export default function Home() {
           <div className="w-1/4 bg-amber-600 h-full">placeholder div</div>
           <div className="w-1/4 bg-amber-600 h-full">placeholder div</div>
         </div>
+        <div className="flex justify-center mt-8">
+          <a href="https://forms.gle/pfc1T2dyYW7xQzj78" className="bg-[#F9DFA6] text-black px-8 py-4 font-[eczar] text-2xl hover:opacity-90 rounded-sm transition">Submit Your Story Here!</a>
+        </div>
       </div>
     </div>
   );
