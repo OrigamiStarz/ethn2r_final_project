@@ -3,7 +3,7 @@ export default function Home() {
     <div>
       {/* section 1 - title */}
       <div className="bg-[url('../../public/books.png')] bg-cover bg-center bg-no-repeat h-screen relative">
-        <div className="w-full h-full backdrop-brightness-50 dark:backdrop-brightness-75 flex flex-col justify-center">
+        <div className="w-full h-full backdrop-brightness-75 flex flex-col justify-center">
           <h1 className="font-[inspiration] text-9xl text-center text-white">Immigrant Stories</h1>
           <p className="font-[ezcar] text-2xl text-center m-8 text-white">An archive of perspectives written by immigrants</p>
         </div>
@@ -11,7 +11,7 @@ export default function Home() {
 
       </div>
       {/* section 2 - tell your story */}
-      <div className="mb-32">
+      <div className="mb-40">
         <h1 className="font-[inspiration] text-foreground text-6xl text-center mt-20">Tell Your Story</h1>
         <p className="font-[ezcar] text-foreground text-center m-8 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         <div className="flex justify-center gap-4 h-[40vh]">

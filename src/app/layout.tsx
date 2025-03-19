@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import { Inspiration, Eczar } from "next/font/google";
 import "./globals.css";
@@ -27,8 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inspiration.variable} ${eczar.variable} antialiased`}
+        className={`${inspiration.variable} ${eczar.variable} antialiased overflow-x-hidden`}
       >
+        <NavBar />
         <div className="min-h-screen flex flex-col flex-1">
           {children}
         </div>
