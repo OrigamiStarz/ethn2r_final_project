@@ -7,12 +7,12 @@ import "./globals.css";
 const inspiration = Inspiration({
   variable: "--font-inspiration",
   subsets: ["latin"],
-  weight: "400"
+  weight: "400",
 });
 
 const eczar = Eczar({
   variable: "--font-ezcar",
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -31,9 +31,7 @@ export default function RootLayout({
         className={`${inspiration.variable} ${eczar.variable} antialiased overflow-x-hidden`}
       >
         <NavBar />
-        <div className="min-h-screen flex flex-col flex-1">
-          {children}
-        </div>
+        <div className="min-h-screen flex flex-col flex-1">{children}</div>
         <Footer />
       </body>
     </html>
