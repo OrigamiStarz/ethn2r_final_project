@@ -1,6 +1,23 @@
+import fs from "fs";
+import path from "path";
 import Story from "../../../components/Story";
 
 export default function Stories() {
+  const storiesDirectory = path.join(process.cwd(), "stories_data");
+  const filenames = fs.readdirSync(storiesDirectory);
+
+  const stories = filenames.map((filename) => {
+    const filePath = path.join(storiesDirectory, filename);
+    const fileContent = JSON.parse(fs.readFileSync(filePath, "utf8"));
+
+    return {
+      slug: filename.replace(".json", ""),
+      title: fileContent.title || "Untitled",
+      description: fileContent.content || "No description available.",
+      imageUrl: (fileContent.images && fileContent.images[0]) || "",
+    };
+  });
+
   return (
     <div>
       {/* header */}
@@ -12,11 +29,18 @@ export default function Stories() {
         </div>
         <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background" />
       </div>
+
       {/* stories */}
       <div className="flex flex-row flex-wrap justify-center mb-32">
-        <Story imageUrl="" title="Title" description="Description" />
-        <Story imageUrl="" title="Title" description="Description" />
-        <Story imageUrl="" title="Title" description="Description" />
+        {stories.map((story, index) => (
+          <Story
+            key={index}
+            imageUrl={story.imageUrl}
+            title={story.title}
+            description={story.description}
+            slug={story.slug} // Pass slug for linking to full story
+          />
+        ))}
       </div>
     </div>
   );
